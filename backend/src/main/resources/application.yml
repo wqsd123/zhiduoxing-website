@@ -1,0 +1,26 @@
+server:
+  port: 8080  # 后端端口，避免与前端端口冲突（前端默认5173）
+  servlet:
+    context-path: /api  # 接口前缀，所有后端接口都以/api开头，避免与前端路由冲突
+
+spring:
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zhiduoxing_website?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root  # 你的MySQL用户名（默认root）
+    password: 123456  # 你的MySQL密码（修改为自己的密码）
+
+# MyBatis-Plus配置
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml  # 映射文件路径（可选）
+  type-aliases-package: com.zhiduoxing.entity  # 实体类包路径，简化别名
+  configuration:
+    map-underscore-to-camel-case: true  # 开启下划线转驼峰（如create_time → createTime）
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 打印SQL日志，便于调试（可选）
+
+# 日志配置（可选，便于排查问题）
+logging:
+  level:
+    com.zhiduoxing.mapper: debug
+    com.zhiduoxing.controller: info

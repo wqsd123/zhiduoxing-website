@@ -1,0 +1,71 @@
+zhiduoxing-website/  # 项目根目录（IDEA直接打开此文件夹）
+├── frontend/        # 前端项目（Vue+HTML+CSS+JS）
+│   ├── public/      # 静态资源（HTML相关静态文件，直接访问）
+│   │   ├── favicon.ico  # 网站图标
+│   │   ├── logo.png     # 公司LOGO
+│   │   ├── product/     # 产品图片
+│   │   │   └── tin-powder.jpg   # 锡粉产品图
+│   │   └── images/      # 通用图片
+│   │       ├── banner.jpg       # 首页Banner图
+│   │       └── icon/            # 功能图标（导航、按钮等）
+│   ├── src/         # 前端核心代码（Vue+CSS+JS）
+│   │   ├── assets/  # 静态资源（本地引入，非直接访问）
+│   │   │   ├── css/ # CSS样式文件（分层管理）
+│   │   │   │   ├── base.css     # 基础样式（重置默认样式、通用字体/颜色）
+│   │   │   │   ├── common.css   # 公共样式（导航、底部、按钮、标题）
+│   │   │   │   └── page.css     # 页面专属样式（首页、产品页等）
+│   │   │   └── images/  # 本地备用图片
+│   │   ├── components/  # 通用Vue组件（HTML结构+CSS样式+JS交互）
+│   │   │   ├── Navbar.vue       # 导航栏组件
+│   │   │   ├── Footer.vue       # 底部版权组件
+│   │   │   ├── Banner.vue       # 首页Banner组件
+│   │   │   └── ContactForm.vue  # 联系表单组件（核心交互组件）
+│   │   ├── views/       # 页面组件（对应官网各页面，整合组件）
+│   │   │   ├── Home.vue         # 首页（核心页面，含表单）
+│   │   │   ├── About.vue        # 关于我们
+│   │   │   ├── Product.vue      # 产品中心
+│   │   │   ├── Application.vue  # 应用领域
+│   │   │   ├── News.vue         # 新闻动态
+│   │   │   └── Contact.vue      # 联系我们（单独表单页面）
+│   │   ├── router/      # 路由配置（JS，控制页面跳转）
+│   │   │   └── index.js         # 路由规则（配置所有页面路径）
+│   │   ├── utils/       # 工具类（JS）
+│   │   │   └── request.js       # Axios封装（统一对接后端接口）
+│   │   ├── main.js      # 前端入口文件（JS，初始化Vue、路由）
+│   │   └── App.vue      # 根组件（Vue，整合所有页面和组件）
+│   ├── index.html       # 前端入口HTML文件（Vue挂载入口）
+│   ├── package.json     # 前端依赖配置（JS/Vue相关依赖）
+│   └── vite.config.js   # Vite配置（开发端口、跨域代理等）
+├── backend/         # 后端项目（SpringBoot+Java）
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── com/
+│   │   │   │       └── zhiduoxing/
+│   │   │   │           ├── ZhiduoxingApplication.java  # 后端入口类（启动类）
+│   │   │   │           ├── controller/                # 接口控制器（接收前端请求）
+│   │   │   │           │   └── ContactFormController.java  # 表单相关接口
+│   │   │   │           ├── entity/                   # 实体类（对应数据库表）
+│   │   │   │           │   └── ContactForm.java      # 咨询表单实体
+│   │   │   │           ├── mapper/                   # MyBatis-Plus映射器（操作数据库）
+│   │   │   │           │   └── ContactFormMapper.java
+│   │   │   │           ├── service/                  # 业务逻辑层
+│   │   │   │           │   ├── ContactFormService.java  # 业务接口
+│   │   │   │           │   └── impl/
+│   │   │   │           │       └── ContactFormServiceImpl.java  # 业务实现
+│   │   │   │           └── common/                   # 通用配置/工具
+│   │   │   │               ├── Result.java           # 统一响应结果（给前端）
+│   │   │   │               └── CorsConfig.java       # 跨域配置（解决前后端跨域）
+│   │   │   └── resources/
+│   │   │       ├── application.yml  # 后端核心配置（数据库、端口、MyBatis）
+│   │   │       └── mybatis/         # MyBatis配置（可选，简化开发）
+│   │   │           └── mapper/       # 映射文件（无需手动写SQL，可省略）
+│   │   └── test/                    # 测试类（可选，用于调试接口）
+│   │       └── java/
+│   │           └── com/
+│   │               └── zhiduoxing/
+│   │                   └── ZhiduoxingApplicationTests.java
+│   ├── pom.xml         # 后端依赖配置（SpringBoot、MySQL、MyBatis-Plus等）
+│   └── README.md       # 后端说明（可选，标注启动方式）
+└── sql/                # 数据库脚本（MySQL，直接执行）
+    └── zhiduoxing_website.sql  # 数据库创建、表创建、测试数据

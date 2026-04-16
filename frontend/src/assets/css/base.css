@@ -1,0 +1,65 @@
+/* 重置所有元素的默认样式（CSS） */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+}
+
+/* 重置列表样式 */
+ul, ol {
+    list-style: none;
+}
+
+/* 重置链接样式 */
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #165DFF;
+}
+
+/* 重置图片样式 */
+img {
+    vertical-align: middle;
+    border: none;
+    max-width: 100%;
+}
+
+/* 重置表单样式 */
+input, textarea, button {
+    outline: none;
+    border: none;
+    font-family: inherit;
+    background: transparent;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 通用容器（适配不同屏幕） */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 响应式适配（CSS媒体查询） */
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}

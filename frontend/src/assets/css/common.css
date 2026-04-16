@@ -1,0 +1,235 @@
+/* 导航栏样式（CSS） */
+.navbar {
+    height: 80px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    height: 60px;
+}
+
+.navbar .nav-list {
+    display: flex;
+}
+
+.navbar .nav-item {
+    margin-left: 40px;
+}
+
+.navbar .nav-link {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #165DFF;
+}
+
+/* 按钮样式（CSS） */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #165DFF;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0F4CD1;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #165DFF;
+    color: #165DFF;
+}
+
+.btn-outline:hover {
+    background-color: #165DFF;
+    color: #fff;
+}
+
+/* 标题样式（CSS） */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #165DFF;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* 底部样式（CSS） */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer .footer-col {
+    width: 25%;
+    margin-bottom: 30px;
+}
+
+.footer .footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer .footer-col h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: #165DFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer .footer-col p,
+.footer .footer-col a {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer .footer-col a:hover {
+    color: #165DFF;
+}
+
+.footer .copyright {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* 表单样式（CSS） */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-item {
+    margin-bottom: 20px;
+}
+
+.form-item label {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-item input,
+.form-item textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.form-item textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+.form-btn {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+}
+
+.form-tip {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 响应式适配（CSS） */
+@media (max-width: 768px) {
+    .navbar .nav-list {
+        display: none;
+    }
+
+    .footer .footer-col {
+        width: 50%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer .footer-col {
+        width: 100%;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
